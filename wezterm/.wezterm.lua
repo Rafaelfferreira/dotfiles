@@ -6,16 +6,14 @@ local appearance = require 'appearance'
 local config = wezterm.config_builder()
 
 -- (This is where our config will go)
--- config.color_scheme = 'Tomorrow (light) (terminal.sexy)'
 if appearance.is_dark() then
 	config.color_scheme = "Tomorrow Night"
 else
 	config.color_scheme = "Tomorrow (light) (terminal.sexy)"
 end
 
-config.font = wezterm.font({ family = 'Berkeley Mono' })
-config.font_size = 12
-
+config.font = wezterm.font('Menlo')
+config.font_size = 13
 
 -- Returns our config to be evaluated. We mus always do this at the bottom of this file
 return config

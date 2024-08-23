@@ -6,7 +6,6 @@ local module = {}
 -- Returns a bool based on whether the host operating system's
 -- appearance is light or dark.
 function module.is_dark()
-	wezterm.log_info("hello world! my name is " .. wezterm.hostname())
   -- wezterm.gui is not always available, depending on what
   -- environment wezterm is operating in. Just return true
   -- if it's not defined.
