@@ -10,7 +10,7 @@ local config = wezterm.config_builder()
 if appearance.is_dark() then
 	config.color_scheme = "Tokyo Night"
 else
-	config.color_scheme = "Tomorrow"
+	config.color_scheme = "Tomorrow Night Eighties (Gogh)"
 end
 
 -- fonts
