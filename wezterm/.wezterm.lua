@@ -28,10 +28,14 @@ config.window_frame = {
 }
 
 -- Adding status bar to the top right of the screen
-wezterm.on('update-status', function(window)
+
+-- WezTerm event update-status is emiited when the terminal is ready to have its status updated
+wezterm.on('update-status', function(window) 
+
 	-- utf8 character for the powerline left facing solid arrow
 	local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
 
+	-- resolved_pallete is the currently active colour scheme
 	local color_scheme = window:effective_config().resolved_palette
 	local bg = color_scheme.background
 	local fg = color_scheme.foreground
