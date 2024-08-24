@@ -24,7 +24,7 @@ config.macos_window_background_blur = 30
 config.window_decorations = 'RESIZE' -- Removes top bar from the terminal
 config.window_frame = {
 	font = wezterm.font('Menlo'),
-	font_size = 13
+	font_size = 14
 }
 
 -- Adding status bar to the top right of the screen
