@@ -53,5 +53,23 @@ wezterm.on('update-status', function(window)
 	}))
 end)
 
+-- Key bindings
+config.keys = {
+	-- In the terminal 'ESC + f' and 'ESC + b' jump between words
+	{
+		-- When the left arrow is pressed
+		key = 'LeftArrow',
+		-- With the "Option" key modifier held down
+		mods = 'OPT',
+		-- Perform this action, in this case - sending ESC + b to the terminal
+		action = wezterm.action.SendString '\x1bb'
+	},
+	{
+		key = 'RightArrow',
+		mods = 'OPT',
+		action = wezterm.action.SendString '\x1bf'
+	}
+}
+
 -- Returns our config to be evaluated. We mus always do this at the bottom of this file
 return config
