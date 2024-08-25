@@ -7,7 +7,7 @@ if not vim.loop.fs_stat(lazypath) then -- if the lazypath directory does not exi
 		"git",
 		"clone",
 		"--filter=blob:none",
-		"https://github.com/LazyVim/LazyVim.git",
+		"https://github.com/folke/lazy.nvim.git",
 		"--branch=stable", -- latest stable release
 		lazypath
 	})
