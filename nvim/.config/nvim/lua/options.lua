@@ -3,8 +3,13 @@ vim.opt.relativenumber = true -- vim.opt allow us to access vim options as a tab
 vim.opt.splitbelow = true -- makes new windows appear below the current window, not on top
 vim.opt.splitright = true
 
+vim.opt.wrap = false
 vim.opt.tabstop = 4 -- Change the amount of spaces in a tab to 4
 vim.opt.shiftwidth = 4 -- Change the amount of spaces on a shift
+
+vim.opt.virtualedit = "block" -- Can position the selector in spaces with no characters 
+vim.opt.inccommand = "split" -- Shows a preview of changes made with the :%s search and replace; the command is used like :%s/old/new
+vim.opt.scroloff = 999 -- makes the cursor stays in the middle of the screen during long scrolls
 
 -- Keymapping
 vim.g.mapleader = " " -- the "g" stands for global
