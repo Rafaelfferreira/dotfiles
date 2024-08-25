@@ -9,7 +9,7 @@ vim.opt.shiftwidth = 4 -- Change the amount of spaces on a shift
 
 vim.opt.virtualedit = "block" -- Can position the selector in spaces with no characters 
 vim.opt.inccommand = "split" -- Shows a preview of changes made with the :%s search and replace; the command is used like :%s/old/new
-vim.opt.scroloff = 999 -- makes the cursor stays in the middle of the screen during long scrolls
+vim.opt.scrolloff = 999 -- makes the cursor stays in the middle of the screen during long scrolls
 
 -- Keymapping
 vim.g.mapleader = " " -- the "g" stands for global
