@@ -35,3 +35,17 @@ require("lazy").setup({
 		end
 	}
 })
+
+-- Configuring rose-pine
+require("rose-pine").setup({
+	styles = {
+		transparency = true
+	},
+	highlight_groups = {
+		Comment = { fg = "iris" },
+		StatusLine = { fg = "love", bg = "love", blend = 10 },
+		StatusLineNC = { fg = "subtle", bg = "surface" },
+	},
+})
+
+vim.cmd.colorscheme("rose-pine-moon")
