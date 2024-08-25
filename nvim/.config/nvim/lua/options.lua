@@ -11,6 +11,9 @@ vim.opt.virtualedit = "block" -- Can position the selector in spaces with no cha
 vim.opt.inccommand = "split" -- Shows a preview of changes made with the :%s search and replace; the command is used like :%s/old/new
 vim.opt.scrolloff = 999 -- makes the cursor stays in the middle of the screen during long scrolls
 
+vim.opt.termguicolors = true -- Is this worth using on wezterm?
+vim.opt.timeoutlen = 500 -- The time in miliseconds to input keys for a specific command/keymap
+
 -- Keymapping
 vim.g.mapleader = " " -- the "g" stands for global
 vim.g.maplocalleader = ","
