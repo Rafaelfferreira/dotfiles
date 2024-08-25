@@ -1,3 +1,6 @@
+---------------------------------------------------------------------------------------------------
+-- Downloading lazyVim and adding it to the runtime path
+---------------------------------------------------------------------------------------------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then -- if the lazypath directory does not exist run this code
 	vim.fn.system({
@@ -20,3 +23,15 @@ if not vim.loop.fs_stat(lazypath) then -- if the lazypath directory does not exi
 end
 
 vim.opt.rtp:prepend(lazypath) -- add lazy path to the runtime path
+
+
+---------------------------------------------------------------------------------------------------
+-- Setup lazy plugins
+---------------------------------------------------------------------------------------------------
+require("lazy").setup({
+	{
+		"rose-pine/neovim",
+		config = function()
+		end
+	}
+})
