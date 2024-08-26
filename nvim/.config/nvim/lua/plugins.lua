@@ -72,6 +72,9 @@ require("lazy").setup({
 			local lspconfig = require("lspconfig")
 			lspconfig.csharp_ls.setup{} -- C# LSP
 		end,
+	},
+	{
+		"nvim-telescope/telescope.nvim", tag = '0.1.8'
 	}
 })
 
