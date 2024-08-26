@@ -65,6 +65,13 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects"
+	},
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			local lspconfig = require("lspconfig")
+			lspconfig.csharp_ls.setup{} -- C# LSP
+		end,
 	}
 })
 
