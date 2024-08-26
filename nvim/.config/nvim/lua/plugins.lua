@@ -26,7 +26,7 @@ vim.opt.rtp:prepend(lazypath) -- add lazy path to the runtime path
 
 
 ---------------------------------------------------------------------------------------------------
--- Setup lazy plugins
+-- setup lazy plugins
 ---------------------------------------------------------------------------------------------------
 require("lazy").setup({
 	{
@@ -38,7 +38,7 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		config = function()
 			require 'nvim-treesitter.configs'.setup({
-				auto_install = true, -- Automatically install parsers when you open files of an extension you don't have a parser for	
+				auto_install = true, -- automatically install parsers when you open files of an extension you don't have a parser for	
 				highlight = {
 					enable = true
 				},
@@ -46,7 +46,18 @@ require("lazy").setup({
 					enable = true,
 					keymaps = {
 						node_incremental = "v",
-						node_decremental = "V",
+						node_decremental = "v",
+					}
+				},
+				textobjects = {
+					select = {
+						enable = true,
+						keymaps = {
+							-- when you switch to visual mode, you can select a function outer level by pressing the keys ubsude []
+							["af"] = "@function.outer",
+							["if"] = "@function.inner",
+							["as"] = { query = "@scope", desc = "select language scope" }
+						},
 					}
 				}
 			})
