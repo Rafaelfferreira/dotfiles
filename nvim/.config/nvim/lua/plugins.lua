@@ -33,6 +33,27 @@ require("lazy").setup({
 		"rose-pine/neovim",
 		config = function()
 		end
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
+			require 'nvim-treesitter.configs'.setup({
+				auto_install = true, -- Automatically install parsers when you open files of an extension you don't have a parser for	
+				highlight = {
+					enable = true
+				},
+				incremental_selection = {
+					enable = true,
+					keymaps = {
+						node_incremental = "v",
+						node_decremental = "V",
+					}
+				}
+			})
+		end
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects"
 	}
 })
 
