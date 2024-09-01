@@ -18,7 +18,7 @@ config.font = wezterm.font('Menlo')
 config.font_size = 13
 
 -- windows styling
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.7
 config.macos_window_background_blur = 30
 
 config.window_decorations = 'RESIZE' -- Removes top bar from the terminal
