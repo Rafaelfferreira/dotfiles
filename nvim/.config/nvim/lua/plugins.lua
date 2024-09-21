@@ -76,8 +76,12 @@ require("lazy").setup({
 	{
 		"nvim-telescope/telescope.nvim", tag = '0.1.8'
 	},
+	-- Clojure related imports
 	{
 		"Olical/conjure"
+	},
+	{
+		"radenling/vim-dispatch-neovim" -- Adds support for neovims terminal emulator and job control
 	}
 })
 
