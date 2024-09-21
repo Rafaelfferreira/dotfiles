@@ -81,7 +81,13 @@ require("lazy").setup({
 		"Olical/conjure"
 	},
 	{
+		"tpope/vim-dispatch" -- Asynchronous adapter for vim
+	},
+	{
 		"radenling/vim-dispatch-neovim" -- Adds support for neovims terminal emulator and job control
+	},
+	{
+		"clojure-vim/vim-jack-in" -- Jack in to Boot, Clj and Leiningen from Vim
 	}
 })
 

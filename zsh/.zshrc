@@ -4,6 +4,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # Neovim
 alias vim="nvim"
 
+# Clojure repl alias
+alias nrepl="clojure -Sdeps '{:deps {nrepl {:mvn/version \"1.3.0\"} cider/cider-nrepl {:mvn/version \"0.25.2\"}}}' -m nrepl.cmdline --middleware '[\"cider.nrepl/cider-middleware\"]'"
+
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
