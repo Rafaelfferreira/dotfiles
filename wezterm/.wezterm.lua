@@ -1,6 +1,7 @@
 -- Import modules
 local wezterm = require 'wezterm' -- default wezterm module
 local appearance = require 'appearance'
+local act = wezterm.action
 
 -- Creates a config object which we will be adding our config to
 local config = wezterm.config_builder()
@@ -73,7 +74,21 @@ config.keys = {
 		key = 'RightArrow',
 		mods = 'OPT',
 		action = wezterm.action.SendString '\x1bf'
-	}
+	},
+	{
+    	key = "c",
+    	mods = "CMD",
+    	action = wezterm.action_callback(function(window, pane)
+      		local sel = window:get_selection_text_for_pane(pane)
+      		if sel and sel ~= "" then
+        		-- WezTerm has its own selection (e.g. Shift+drag, or not in nvim): copy it
+        		window:perform_action(act.CopyTo("Clipboard"), pane)
+      		else
+        		-- Send the escape code for Cmd+C (Neovim reads it as <D-c>)
+        		window:perform_action(act.SendString("\x1b[99;9u"), pane)
+      		end
+    	end),
+  },
 }
 
 -- Returns our config to be evaluated. We mus always do this at the bottom of this file

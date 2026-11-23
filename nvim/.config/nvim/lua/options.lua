@@ -20,3 +20,6 @@ vim.g.maplocalleader = ","
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- On normal mode, run vim.cmd.Ex whenever "<leader>pv" is pressed
 -- vim.keymap.set("n", "]b", vim.cmd.bnext<CR>)
+
+-- Cmd+C (sent by WezTerm as <D-c>) copies the visual selection to the system clipboard
+vim.keymap.set("v", "<D-c>", '"+y', { desc = "Copy to system clipboard" })
