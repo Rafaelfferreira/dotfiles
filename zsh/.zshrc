@@ -91,4 +91,9 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/Users/rafael.ferreira/fvm/versions/3.41.0/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Machine-specific settings and secrets (API keys, tokens). Lives outside this
+# public repo; never commit it.
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
+
 export ORIGINAL_PATH="$PATH"

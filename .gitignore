@@ -3,3 +3,9 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+
+### Secrets ###
+# Machine-specific config and secrets belong in ~/.zshrc.local, never here
+.zshrc.local
+*.local
+.env

@@ -23,6 +23,12 @@ My git, zsh, wezterm, nvim, starship and zed dot files.
    ```
 5. Open a new WezTerm window, then run `nvim` once so lazy.nvim installs the plugins.
 
-Not managed here: nvm, ghcup, the Android SDK, Raycast settings (use Raycast's own export/import) and macOS system settings.
+## Secrets and machine-specific settings
+
+This repo is public. Put API keys, tokens and anything specific to one Mac in `~/.zshrc.local`, which `.zshrc` loads if it exists. It lives outside the repo and is never committed (`.gitignore` also blocks `*.local` and `.env` files).
+
+## Not managed here
+
+nvm, ghcup, the Android SDK, Raycast settings (use Raycast's own export/import) and macOS system settings.
 
 To refresh the `Brewfile` after installing new things: `brew bundle dump --file=~/.dotfiles/Brewfile --force --no-vscode` (then re-add the wezterm/zed/raycast casks if they were installed outside Homebrew).
