@@ -7,31 +7,34 @@ alias vim="nvim"
 # Clojure repl alias
 alias nrepl="clojure -Sdeps '{:deps {nrepl {:mvn/version \"1.3.0\"} cider/cider-nrepl {:mvn/version \"0.25.2\"}}}' -m nrepl.cmdline --middleware '[\"cider.nrepl/cider-middleware\"]'"
 
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# Rbenv
+# eval "(rbenv init -)"
+
+# Flutter setup
+# change print working directory hook
+chpwd() {
+  export PATH="$ORIGINAL_PATH"
+  
+  if [ -d ".fvm/flutter_sdk" ] && [[ "$PWD" != "$HOME" ]]; then
+    export PATH="$PWD/.fvm/flutter_sdk/bin:$PATH"
+  else
+	export PATH="$HOME/development/flutter/bin:$PATH"
+  fi
+}
+
+# Spill specific jdk
+export PATH="$PATH:/Users/rafael.ferreira/Library/Android/sdk/platform-tools"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
-
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -70,3 +73,22 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 
 # Starting starship
 eval "$(starship init zsh)"
+
+[ -f "/Users/rafael.ferreira/.ghcup/env" ] && . "/Users/rafael.ferreira/.ghcup/env" # ghcup-env
+
+# nvm installation
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/rafael.ferreira/.dart-cli-completion/zsh-config.zsh ]] && . /Users/rafael.ferreira/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+
+
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/Users/rafael.ferreira/fvm/versions/3.41.0/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export ORIGINAL_PATH="$PATH"

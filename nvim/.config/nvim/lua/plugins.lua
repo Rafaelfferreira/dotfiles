@@ -71,6 +71,7 @@ require("lazy").setup({
 		config = function()
 			local lspconfig = require("lspconfig")
 			lspconfig.csharp_ls.setup{} -- C# LSP
+			lspconfig.hls.setup{} -- Haskell LSP
 		end,
 	},
 	{
