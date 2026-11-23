@@ -36,6 +36,8 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
+		-- "main" is an incompatible rewrite without nvim-treesitter.configs, which this config uses
+		branch = "master",
 		config = function()
 			require 'nvim-treesitter.configs'.setup({
 				auto_install = true, -- automatically install parsers when you open files of an extension you don't have a parser for	
@@ -64,7 +66,8 @@ require("lazy").setup({
 		end
 	},
 	{
-		"nvim-treesitter/nvim-treesitter-textobjects"
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		branch = "master" -- must match nvim-treesitter's branch
 	},
 	{
 		"neovim/nvim-lspconfig",

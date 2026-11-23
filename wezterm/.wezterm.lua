@@ -80,11 +80,13 @@ config.keys = {
     	mods = "CMD",
     	action = wezterm.action_callback(function(window, pane)
       		local sel = window:get_selection_text_for_pane(pane)
+      		local proc = pane:get_foreground_process_name() or ""
       		if sel and sel ~= "" then
         		-- WezTerm has its own selection (e.g. Shift+drag, or not in nvim): copy it
         		window:perform_action(act.CopyTo("Clipboard"), pane)
-      		else
-        		-- Send the escape code for Cmd+C (Neovim reads it as <D-c>)
+      		elseif proc:match("nvim$") then
+        		-- Send the escape code for Cmd+C (Neovim reads it as <D-c>).
+        		-- Only for Neovim: other programs (e.g. zsh) would type it as "9;9u"
         		window:perform_action(act.SendString("\x1b[99;9u"), pane)
       		end
     	end),
